@@ -1,0 +1,84 @@
+<div class="row">
+  <div class="col-12 m-auto">
+    <div class="card">
+      <div class="card-header font-weight-bolder">
+        Drug Details
+      </div>
+      <div class="card-body">
+        <div class="row justify-content-center">
+          <div class="col-12">
+            <section class="container border mb-4 p-3" *ngFor="let drug of acceptData.drugs; let i = index;">
+              <div class="row">
+                <div class="col-md-1">
+                  {{i + 1}}
+                </div>
+                <div class="col-md-3">
+                  <input type="text" class="form-control" readonly value="{{drug.drugname}}" />
+                </div>
+                <div class="col-md-2">
+                  <input type="number" class="form-control" readonly value="{{drug.quantity}}" />
+                </div>
+                <div class="col-md-2">
+                  <select class="form-control" readonly value="{{drug.status}}">
+                    <option value="Accept">Accept</option>
+                    <option value="Reject">Reject</option>
+                  </select>
+                </div>
+                <div class="col-md-2">
+                  <input type="number" class="form-control" readonly value="{{drug.price}}" />
+                </div>
+                <div class="col-md-2">
+                  <input type="text" class="form-control" readonly value="{{drug.price * drug.quantity}}" />
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+        <div class="row py-2">
+          <div class="col-4">
+            <span class="font-weight-bolder">Sub Total</span>
+          </div>
+          <div class="col-4">
+            <span class="font-weight-bolder">Discount</span>
+          </div>
+          <div class="col-4">
+            <span class="font-weight-bolder">Delivery Fee</span>
+          </div>
+        </div>
+        <div class="row py-2">
+          <div class="col-4">
+            <input type="text" class="form-control" readonly value="{{acceptData.subtotal}}" />
+          </div>
+          <div class="col-4">
+            <input type="text" class="form-control" readonly value="{{acceptData.discount}}" />
+          </div>
+          <div class="col-4">
+            <input type="text" class="form-control" readonly value="{{acceptData.deliveryfee}}" />
+          </div>
+        </div>
+        <div class="row py-2">
+          <div class="col-4">
+            <span class="font-weight-bolder">Loyality Discount</span>
+          </div>
+          <div class="col-4">
+            <span class="font-weight-bolder">Insured Amount</span>
+          </div>
+          <div class="col-4">
+            <span class="font-weight-bolder">Total User Payable</span>
+          </div>
+        </div>
+        <div class="row py-2">
+          <div class="col-4">
+            <input type="text" class="form-control" readonly value="{{acceptData.loyalitydiscount}}" />
+          </div>
+          <div class="col-4">
+            <input type="text" class="form-control" readonly value="{{acceptData.insuredamount}}" />
+          </div>
+          <div class="col-4">
+            <input type="text" class="form-control" readonly value="{{acceptData.totaluserpayable}}" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
